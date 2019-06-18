@@ -3,7 +3,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const app = express()
+const app = express();
 const PORT = process.env.PORT || 4000
 
 const todoItemRoutes = require('./routes/todoRoutes')
@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 
 // Flags for deprecation warnings
 mongoose
-  .connect(process.env.MONGOLAB_URI, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true })
+  .connect(process.env.MONGOLAB_URI_LOCAL, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true })
   .then(() => {
     console.log("You can talk to your DB now.");
   })
