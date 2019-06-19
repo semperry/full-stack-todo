@@ -12,8 +12,11 @@ class TodoItem extends React.Component {
 
   toggleDone = () => {
     axios
-      .put(`http://localhost:4000/todos/todo/${this.props.item._id}`, { title: this.props.item.title,
-      done: !this.state.done } )
+      .put(`https://rec-todo-server.herokuapp.com/todos/todo/${this.props.item._id}`, 
+      { 
+        title: this.props.item.title,
+        done: !this.state.done 
+      })
       .then(
         this.setState({
           done: !this.state.done

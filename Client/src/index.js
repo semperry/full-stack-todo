@@ -17,7 +17,7 @@ class App extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:4000/todos")
+      .get("https://rec-todo-server.herokuapp.com/todos")
       .then(response => response.data)
       .then(data =>
         this.setState({
@@ -43,7 +43,7 @@ class App extends React.Component {
   addTodo = event => {
     event.preventDefault();
     axios
-      .post("http://localhost:4000/todos/add-todo", {
+      .post("https://rec-todo-server.herokuapp.com/todos/add-todo", {
         title: this.state.todo,
         done: false
       })
@@ -58,7 +58,7 @@ class App extends React.Component {
 
   deleteItem = id => {
     axios
-      .delete(`http://localhost:4000/todos/delete/${id}`)
+      .delete(`https://rec-todo-server.herokuapp.com/todos/delete/${id}`)
       .then(
         this.setState({
           todos: this.state.todos.filter(item => {
